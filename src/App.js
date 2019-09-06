@@ -1,11 +1,13 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
+import TopBar from './components/TopBar';
+import Feed from './components/Feed/';
 
 function App() {
   return (
     <div className="App">
-     It works !
+      <TopBar />
+      <Feed />
     </div>
   );
 }
