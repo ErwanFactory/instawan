@@ -6,11 +6,12 @@ class TopBar extends React.Component {
 
     render() {
         return (
-        <div className="topbar">
+        <div className="fixed-top bg-white w-100 d-flex align-items-center justify-content-around">
             <a href="/">
-                <img src={logo} alt="Logo" />
+                <img src={logo} alt="Logo" width="50" height="50" />
             </a>
             <SearchBar />
+            <div></div>
         </div>);
     }
 }

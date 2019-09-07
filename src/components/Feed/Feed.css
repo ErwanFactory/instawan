@@ -1,0 +1,18 @@
+.feed {
+    width: 50%;
+    margin: auto;
+    margin-top: 3em;
+}
+
+@media (max-width: 1024px) {
+    .feed {
+        width: auto;
+        margin: 1em;
+        margin-top: 3em;
+    }
+}
+
+.filters {
+    display: flex;
+    margin-bottom: 1em;
+}

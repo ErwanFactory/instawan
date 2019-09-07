@@ -1,0 +1,17 @@
+h2, h3, p {
+    text-align: left;
+}
+
+.MuiCardMedia-root {
+    height: 500px;
+}
+
+.location a {
+    color: gray;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.tag {
+    margin-right: 0.5em;
+}

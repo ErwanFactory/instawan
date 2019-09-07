@@ -1,0 +1,8 @@
+html {
+    font-family: Roboto;
+}
+
+textarea:focus, input:focus, button:focus {
+    outline: none;
+}
+

@@ -1,10 +1,10 @@
 [
     {
         "id": 1,
-        "url" : "assets/photos/DSC09207.jpg",
-        "title" : "Many apartments",
-        "location" : "montreal",
-        "desc" : "Many apartments",
+        "url" : "https://live.staticflickr.com/65535/48692233268_1b2e50c987_k.jpg",
+        "title" : "Many apartments.",
+        "location" : "Montréal",
+        "description" : "First place I saw in Montréal. Thought it would fit well for an urban picture.",
         "tags" : ["urban", "montreal"]
     }
 ]
