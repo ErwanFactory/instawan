@@ -1,6 +1,8 @@
 import React from 'react';
 import ShareIcon from '@material-ui/icons/Share';
-import { Icon, Card, CardMedia, CardContent, CardActions, IconButton, Typography } from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
+import { Icon, Card, CardMedia, CardContent, CardActions, IconButton, Typography, Snackbar, Button } from '@material-ui/core';
+import copy from 'clipboard-copy';
 import './Post.css';
 
 
@@ -10,14 +12,26 @@ class Post extends React.Component {
         super(props);
 
         this.state = {
-            liked: false
+            liked: false,
+            open: false
         };
 
         this.like = this.like.bind(this);
+        this.share = this.share.bind(this);
+        this.handleClose = this.handleClose.bind(this);
     }
 
     like() {
         this.setState({ liked: !this.state.liked });
+    }
+
+    share() {
+        this.setState({ open: true });
+        copy(this.props.url);
+    }
+
+    handleClose() {
+        this.setState({ open: false });
     }
 
     render() {
@@ -47,18 +61,39 @@ class Post extends React.Component {
                     <CardActions disableSpacing>
                         {this.state.liked ?
                             <IconButton aria-label="liked" onClick={this.like}>
-                                <Icon>favorite</Icon>
+                                <Icon color="secondary">favorite</Icon>
                             </IconButton>
                             :
                             <IconButton aria-label="add to favorites" onClick={this.like}>
                                 <Icon>favorite_border</Icon>
                             </IconButton>
                         }
-                        <IconButton aria-label="share">
+                        <IconButton aria-label="share" onClick={this.share}>
                             <ShareIcon />
                         </IconButton>
                     </CardActions>
                 </Card>
+                <Snackbar
+                    anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'center',
+                    }}
+                    open={this.state.open}
+                    autoHideDuration={6000}
+                    onClose={this.handleClose}
+                    ContentProps={{
+                        'aria-describedby': 'message-id',
+                    }}
+                    message={<span id="message-id">Copied to clipboard.</span>}
+                    action={
+                        <IconButton
+                            key="close"
+                            aria-label="close"
+                            color="inherit"
+                            onClick={this.handleClose}>
+                            <CloseIcon />
+                        </IconButton>}
+                />
             </div>
         );
     }
