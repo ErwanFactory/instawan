@@ -2,6 +2,11 @@ h2, h3, p {
     text-align: left;
 }
 
+.post {
+    margin-bottom: 1em;
+    width: 640px;
+}
+
 .MuiCardMedia-root {
     height: 500px;
 }

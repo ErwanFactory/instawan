@@ -5,19 +5,20 @@ import './Filter.css';
 class Filter extends React.Component {
 
     constructor(props) {
-        super();
+        super(props);
         this.handleDelete = this.handleDelete.bind(this);
     }
 
     handleDelete() {
-        console.log('Delete the filter');
+        this.props.onFilterDelete(this.props.filter);
     }
 
     render() {
         return (
             <Chip
-                label="#urban"
+                label={'#' + this.props.filter}
                 onDelete={this.handleDelete}
+                className="filter"
                 color="primary"
             />
         );

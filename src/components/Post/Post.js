@@ -6,8 +6,22 @@ import './Post.css';
 
 class Post extends React.Component {
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            liked: false
+        };
+
+        this.like = this.like.bind(this);
+    }
+
+    like() {
+        this.setState({ liked: !this.state.liked });
+    }
+
     render() {
-        const tags = this.props.tags && this.props.tags.map(tag => <a href="#" className="tag" key={tag}>#{tag}</a>);
+        const tags = this.props.tags && this.props.tags.map(tag => <span href="#" className="tag" key={tag}>#{tag}</span>);
 
         return (
             <div className="post">
@@ -21,7 +35,7 @@ class Post extends React.Component {
                             {this.props.title}
                         </Typography>
                         <Typography gutterBottom component="h3" className="location">
-                            <a href={"http://google.com/maps?q=" + this.props.location} target="_blank" rel="noopener noreferrer">{this.props.location}</a>
+                            <a href={"http://google.com/maps?q=" + this.props.location} target="_blank" rel="noopener noreferrer">{this.props.location}.</a>
                         </Typography>
                         <Typography color="textSecondary" component="p">
                             {this.props.description}
@@ -31,9 +45,15 @@ class Post extends React.Component {
                         </div>
                     </CardContent>
                     <CardActions disableSpacing>
-                        <IconButton aria-label="add to favorites">
-                            <Icon>favorite_border</Icon>
-                        </IconButton>
+                        {this.state.liked ?
+                            <IconButton aria-label="liked" onClick={this.like}>
+                                <Icon>favorite</Icon>
+                            </IconButton>
+                            :
+                            <IconButton aria-label="add to favorites" onClick={this.like}>
+                                <Icon>favorite_border</Icon>
+                            </IconButton>
+                        }
                         <IconButton aria-label="share">
                             <ShareIcon />
                         </IconButton>
