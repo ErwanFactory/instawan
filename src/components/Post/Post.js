@@ -35,7 +35,8 @@ class Post extends React.Component {
     }
 
     render() {
-        const tags = this.props.tags && this.props.tags.map(tag => <span href="#" className="tag" key={tag}>#{tag}</span>);
+        const tags = this.props.tags && 
+            this.props.tags.map(tag => <a href={'?tags=' + tag } className="tag" key={tag}>#{tag}</a>);
 
         return (
             <div className="post">
