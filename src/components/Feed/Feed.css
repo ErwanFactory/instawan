@@ -9,3 +9,9 @@
     display: flex;
     margin-bottom: 1em;
 }
+
+@media screen and (max-width:480px) {
+    .feed {
+        margin-top: 10em;
+    }
+}

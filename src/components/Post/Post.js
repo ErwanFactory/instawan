@@ -5,7 +5,6 @@ import { Icon, Card, CardMedia, CardContent, CardActions, IconButton, Typography
 import copy from 'clipboard-copy';
 import './Post.css';
 
-
 class Post extends React.Component {
 
     constructor(props) {

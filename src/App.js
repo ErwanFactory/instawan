@@ -5,18 +5,14 @@ import FiltersManager from './components/FiltersManager/FiltersManager';
 
 const App = () => {
   return (
-    <React.Fragment>
-      <Router>
-        <React.Fragment>
-          <Route
-            path='/'
-            render={({ history }) => {
-              return <FiltersManager history={history} />;
-            }}
-          />
-        </React.Fragment>
-      </Router>
-    </React.Fragment>
+    <Router>
+      <Route
+        path='/'
+        render={({ history }) => {
+          return <FiltersManager history={history} />;
+        }}
+      />
+    </Router>
   );
 }
 
