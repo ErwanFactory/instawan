@@ -38,7 +38,11 @@ class FiltersManager extends React.Component {
   }
 
   handleFilterAdd(filter) {
-    this.state.filters.push(filter);
+    const cleanFilter = filter.replace(/\W+/g, '').toLowerCase();
+    if (!this.state.filters.find(f => f === cleanFilter)) {
+      this.state.filters.push(cleanFilter);
+    }
+    
     this.setFiltersInQueryParams(this.state.filters);
   }
 

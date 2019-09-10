@@ -14,8 +14,7 @@ class MainPage extends React.Component {
 
   addNewFilter(newFilters) {
     newFilters.forEach(filter => {
-      const cleanFilter = filter.replace(/\W+/g, '');
-      this.props.onFilterAdd(cleanFilter);
+      this.props.onFilterAdd(filter);
     });
   }
 
