@@ -1,6 +1,17 @@
-.search-bar {
+.searchbar-input {
     border-radius: 50px;
     border: 1px solid lightgray;
     padding: 0 1em;
     width: 20em;
+}
+
+.searchbar {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width:480px) {
+    .searchbar {
+        flex-direction: column;
+    }
 }

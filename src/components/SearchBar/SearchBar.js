@@ -26,19 +26,17 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-            <div className="searchbar">
-                <form className="d-flex align-items-center" onSubmit={this.handleSubmit}>
-                    <input name="search" className="search-bar" placeholder="Type your tags here (montreal, urban)..."
-                        value={this.state.filterValue} onChange={this.handleChange}
-                        pattern="^(\w+( )?)+$" required 
-                        title="Only alphanumeric characters"/>
-                    <button type="submit" className="btn">
-                        <i className="material-icons">
-                            search
+            <form className="searchbar" onSubmit={this.handleSubmit}>
+                <input name="search" className="searchbar-input" placeholder="Type your tags here (montreal, urban)..."
+                    value={this.state.filterValue} onChange={this.handleChange}
+                    pattern="^(\w+( )?)+$" required
+                    title="Only alphanumeric characters" />
+                <button type="submit" className="btn">
+                    <i className="material-icons">
+                        search
                         </i>
-                    </button>
-                </form>
-            </div>);
+                </button>
+            </form>);
     }
 }
 

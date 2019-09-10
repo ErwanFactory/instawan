@@ -11,6 +11,14 @@ h2, h3, p {
     height: 500px;
 }
 
+@media screen and (max-width: 640px) {
+    .post {
+        width: 95%;
+        margin: auto;
+        margin-bottom: 1em;
+    }
+}
+
 .location a {
     color: gray;
     text-decoration: none;

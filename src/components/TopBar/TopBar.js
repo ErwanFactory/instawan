@@ -1,13 +1,14 @@
 import React from 'react';
 import logo from '../../assets/images/logo-erwan.svg';
 import SearchBar from '../SearchBar/SearchBar';
+import './TopBar.css';
 
 class TopBar extends React.Component {
 
     render() {
 
         return (
-        <div className="fixed-top bg-white w-100 d-flex align-items-center justify-content-around">
+        <div className="topbar">
             <a href="/">
                 <img src={logo} alt="Logo" width="50" height="50" />
             </a>
