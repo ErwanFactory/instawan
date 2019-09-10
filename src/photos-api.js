@@ -1,14 +1,10 @@
 import photos from './assets/photos.json';
 
-export const getPhotos = () => {
-    return photos;
-}
-
-export const getPhotosByTags = (tags) => {
+const getPhotos = (tags = []) => {
     if (tags.length === 0) {
         return photos;
     }
-    
+
     // Usually that part should be done in backend but I don't have any for this example.
     return photos.filter(photo =>
         photo.tags.find(photoTag => 
@@ -18,3 +14,5 @@ export const getPhotosByTags = (tags) => {
         )
     );
 }
+
+export default getPhotos;

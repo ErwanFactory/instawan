@@ -19,8 +19,7 @@ class Filter extends React.Component {
                 label={'#' + this.props.filter}
                 onDelete={this.handleDelete}
                 className="filter"
-                color="primary"
-            />
+                color="primary"/>
         );
     }
 }

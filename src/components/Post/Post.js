@@ -1,7 +1,7 @@
 import React from 'react';
 import ShareIcon from '@material-ui/icons/Share';
 import CloseIcon from '@material-ui/icons/Close';
-import { Icon, Card, CardMedia, CardContent, CardActions, IconButton, Typography, Snackbar, Button } from '@material-ui/core';
+import { Icon, Card, CardMedia, CardContent, CardActions, IconButton, Typography, Snackbar } from '@material-ui/core';
 import copy from 'clipboard-copy';
 import './Post.css';
 
